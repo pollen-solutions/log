@@ -1,0 +1,43 @@
+{
+  "name": "pollen-solutions/log",
+  "description": "Pollen Solutions - Log Component - Monolog PSR-3 logging implementation.",
+  "homepage": "https://www.presstify.com/pollen-solutions/log/",
+  "keywords": [
+    "pollen-solutions",
+    "component",
+    "logs",
+    "logging",
+    "PSR-3"
+  ],
+  "time": "2021-08-12",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jordy Manner",
+      "email": "jordy@presstify.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "monolog/monolog": "^2.2",
+    "pollen-solutions/support": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0",
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pollen\\Log\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Pollen\\Log\\Test\\": "tests"
+    }
+  },
+  "suggest": {
+    "pollen-solutions/container" : "Pollen Solutions - Container Component - PSR-11 ready Dependencies Injection Container."
+  },
+  "minimum-stability": "dev"
+}
