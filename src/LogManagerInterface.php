@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace Pollen\Log;
 
-use Pollen\Support\Concerns\ConfigBagAwareTraitInterface;
 use Pollen\Support\Proxy\ContainerProxyInterface;
 
 /**
  * @mixin Logger
  */
-interface LogManagerInterface extends ConfigBagAwareTraitInterface, ContainerProxyInterface
+interface LogManagerInterface extends ContainerProxyInterface
 {
     /**
      * Adds a logger instance to the registered list.
