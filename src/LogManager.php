@@ -6,7 +6,6 @@ namespace Pollen\Log;
 
 use BadMethodCallException;
 use Exception;
-use Pollen\Support\Concerns\ConfigBagAwareTrait;
 use Pollen\Support\Exception\ManagerRuntimeException;
 use Pollen\Support\Proxy\ContainerProxy;
 use Psr\Container\ContainerInterface as Container;
@@ -18,7 +17,6 @@ use Throwable;
  */
 class LogManager implements LogManagerInterface
 {
-    use ConfigBagAwareTrait;
     use ContainerProxy;
 
     /**
@@ -46,15 +44,16 @@ class LogManager implements LogManagerInterface
     protected array $channels = [];
 
     /**
-     * @param array $config
      * @param Container|null $container
      */
-    public function __construct(array $config = [], ?Container $container = null)
+    public function __construct(?Container $container = null)
     {
-        $this->setConfig($config);
-
         if ($container !== null) {
             $this->setContainer($container);
+        }
+
+        if (!self::$instance instanceof static) {
+            self::$instance = $this;
         }
     }
 
